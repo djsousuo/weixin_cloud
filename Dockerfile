@@ -1,7 +1,7 @@
 FROM golang:1.13 as builder
 
 RUN mkdir /app && mkdir /app/a
-ADD /root/ /app/a/
+ADD / /app/a/
 ADD . /app/
 
 WORKDIR /app
